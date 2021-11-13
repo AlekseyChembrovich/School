@@ -1,0 +1,10 @@
+﻿CREATE TABLE [dbo].[Employee]
+(
+	[Id] INT NOT NULL IDENTITY(1, 1) PRIMARY KEY,
+	[Surname] NVARCHAR(100) NULL,
+	[Name] NVARCHAR(100) NULL,
+	[Patronymic] NVARCHAR(100) NULL,
+	[Phone] NCHAR(25) NULL,
+	[PositionId] INT NULL,
+	CONSTRAINT FK_Position_Employee FOREIGN KEY ([PositionId]) REFERENCES [dbo].[Position]([Id]) ON DELETE CASCADE ON UPDATE CASCADE
+)
